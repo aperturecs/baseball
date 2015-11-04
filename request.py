@@ -1,4 +1,5 @@
 import requests
+from bs4 import BeautifulSoup
 
 params = {
     "__EVENTTARGET" : "ctl00$ctl00$cphContainer$cphContents$ddlYear",
@@ -8,7 +9,7 @@ params = {
     ,"__VIEWSTATEGENERATOR" : "07340454",
     "__EVENTVALIDATION" : "/wEdAAkYl98N92MIjaYMlpTSHpbMEG4FQbqeMQMc81CqbOAKuwJ3fDlphD/8+kBKsg6066H+U6yDvKKS7Q2/wix8rDYWVCz/NUuC/D4JkSA6UUtGOasWmV6pb+DNfkkyPJe4qAeZkDbfGaIsMikG06rlk7O+7yLKEf2GqF9x+CCR9rpurcCo6/8f4k+kxf++tERcpN6KPIW6Vk+VyAzwKvxE//gq9UxZfVUU6PmjE4YwA4DyYA==",
     "ctl00$ctl00$txtSearchWord":"",
-    "ctl00$ctl00$cphContainer$cphContents$ddlYear":"2014"
+    "ctl00$ctl00$cphContainer$cphContents$ddlYear":"2013"
 }
 
 header = {
@@ -16,4 +17,7 @@ header = {
 }
 
 r = requests.post("http://www.koreabaseball.com/Record/Player/HitterDetail/Daily.aspx?playerId=64914", data = params, headers=header)
-print r.content
+
+soup = BeautifulSoup(r.content, 'html.parser')
+doc1 = soup.find("div",{ "class" : "player_records" })
+print doc1
