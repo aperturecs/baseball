@@ -1,26 +1,13 @@
 #-*- coding: utf-8 -*-
 import parser
-
+from playerCode import PlayerCode
 result = []
 
 f = open("result.txt","w")
 
-l = [60288
-,79215
-,72214
-,76290
-,76232
-,79240
-,79231
-,75334
-,76267
-,77248
-,62265
-,97571
-,62929]
+codes = PlayerCode()
 
-
-for playerId in l:
+for playerId in codes.codes:
     for year in range(2010,2015):
 
         print playerId

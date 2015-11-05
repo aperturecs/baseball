@@ -8,7 +8,6 @@ import sys
 
 def htmlParsing(request):
     records = []
-    print request.content
 
     soup = BeautifulSoup(request.content, 'html.parser')
     player_info_html = soup.find("div",{"class" :  "player_info"})
