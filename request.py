@@ -1,6 +1,5 @@
 #-*- coding: utf-8 -*-
 import parser
-import jsonpickle
 
 result = []
 
@@ -24,6 +23,7 @@ l = [60288
 for playerId in l:
     for year in range(2010,2015):
 
+        print playerId
         datas = parser.htmlParsing(parser.httpRequest(playerId,year))
 
         if datas == None:
