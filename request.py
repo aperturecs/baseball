@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 import requests
 from bs4 import BeautifulSoup
 
@@ -9,7 +10,7 @@ params = {
     ,"__VIEWSTATEGENERATOR" : "07340454",
     "__EVENTVALIDATION" : "/wEdAAkYl98N92MIjaYMlpTSHpbMEG4FQbqeMQMc81CqbOAKuwJ3fDlphD/8+kBKsg6066H+U6yDvKKS7Q2/wix8rDYWVCz/NUuC/D4JkSA6UUtGOasWmV6pb+DNfkkyPJe4qAeZkDbfGaIsMikG06rlk7O+7yLKEf2GqF9x+CCR9rpurcCo6/8f4k+kxf++tERcpN6KPIW6Vk+VyAzwKvxE//gq9UxZfVUU6PmjE4YwA4DyYA==",
     "ctl00$ctl00$txtSearchWord":"",
-    "ctl00$ctl00$cphContainer$cphContents$ddlYear":"2013"
+    "ctl00$ctl00$cphContainer$cphContents$ddlYear":"2015"
 }
 
 header = {
@@ -20,8 +21,7 @@ r = requests.post("http://www.koreabaseball.com/Record/Player/HitterDetail/Daily
 
 soup = BeautifulSoup(r.content, 'html.parser')
 doc1 = soup.find("div",{ "class" : "player_records" })
-f = open("Info", "w")
-f.write(doc1)
-f.close()
 
-print doc1
+f = open("Info.txt", "w")
+f.write(str(doc1))
+f.close()
