@@ -20,4 +20,8 @@ r = requests.post("http://www.koreabaseball.com/Record/Player/HitterDetail/Daily
 
 soup = BeautifulSoup(r.content, 'html.parser')
 doc1 = soup.find("div",{ "class" : "player_records" })
+f = open("Info", "w")
+f.write(doc1)
+f.close()
+
 print doc1
