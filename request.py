@@ -20,8 +20,10 @@ header = {
 r = requests.post("http://www.koreabaseball.com/Record/Player/HitterDetail/Daily.aspx?playerId=64914", data = params, headers=header)
 
 soup = BeautifulSoup(r.content, 'html.parser')
-doc1 = soup.find("div",{ "class" : "player_records" })
+doc1 = soup.find("div",{ "class" : "player_records" }).findAll("tbody")
+
 
 f = open("Info.txt", "w")
-f.write(str(doc1))
+for text in doc1:
+    f.write(str(text))
 f.close()

@@ -1,38 +1,3 @@
-<div class="player_records">
-<h4 class="bul_history mgt35"> 2015년 일자별 성적</h4>
-<select class="select02" id="cphContainer_cphContents_ddlYear" name="ctl00$ctl00$cphContainer$cphContents$ddlYear">
-<option selected="selected" value="2015">2015</option>
-<option value="2014">2014</option>
-<option value="2013">2013</option>
-<option value="2012">2012</option>
-<option value="2011">2011</option>
-<option value="2010">2010</option>
-</select>
-<table cellpadding="0" cellspacing="0" class="tData01 tt mgb5" summary="통산기록">
-<thead>
-<tr>
-<th>3월</th>
-<th>상대</th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타율">AVG1</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타수">AB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="득점">R</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="안타">H</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="2루타">2B</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="3루타">3B</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="홈런">HR</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타점">RBI</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="도루">SB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="도루실패">CS</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="볼넷">BB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="사구">HBP</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="삼진">SO</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="병살타">GDP</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="시즌누적 타율">AVG2</a></th>
-</tr>
-</thead>
-<tfoot class="play_record">
-<tr><th colspan="2">합계</th><th>0.286</th><th>7</th><th>2</th><th>2</th><th>1</th><th>0</th><th>1</th><th>2</th><th>1</th><th>0</th><th>2</th><th>1</th><th>1</th><th>0</th><th>0.286</th></tr>
-</tfoot>
 <tbody>
 <tr>
 <td>03.28</td>
@@ -72,34 +37,7 @@
 <td>0</td>
 <td>0.286</td>
 </tr>
-</tbody>
-</table>
-<table cellpadding="0" cellspacing="0" class="tData01 tt mgb5" summary="통산기록">
-<thead>
-<tr>
-<th>4월</th>
-<th>상대</th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타율">AVG1</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타수">AB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="득점">R</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="안타">H</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="2루타">2B</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="3루타">3B</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="홈런">HR</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타점">RBI</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="도루">SB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="도루실패">CS</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="볼넷">BB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="사구">HBP</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="삼진">SO</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="병살타">GDP</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="시즌누적 타율">AVG2</a></th>
-</tr>
-</thead>
-<tfoot class="play_record">
-<tr><th colspan="2">합계</th><th>0.400</th><th>65</th><th>20</th><th>26</th><th>7</th><th>0</th><th>7</th><th>20</th><th>0</th><th>1</th><th>8</th><th>0</th><th>6</th><th>2</th><th>0.389</th></tr>
-</tfoot>
-<tbody>
+</tbody><tbody>
 <tr>
 <td>04.01</td>
 <td>NC</td>
@@ -461,34 +399,7 @@
 <td>0</td>
 <td>0.389</td>
 </tr>
-</tbody>
-</table>
-<table cellpadding="0" cellspacing="0" class="tData01 tt mgb5" summary="통산기록">
-<thead>
-<tr>
-<th>5월</th>
-<th>상대</th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타율">AVG1</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타수">AB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="득점">R</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="안타">H</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="2루타">2B</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="3루타">3B</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="홈런">HR</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타점">RBI</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="도루">SB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="도루실패">CS</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="볼넷">BB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="사구">HBP</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="삼진">SO</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="병살타">GDP</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="시즌누적 타율">AVG2</a></th>
-</tr>
-</thead>
-<tfoot class="play_record">
-<tr><th colspan="2">합계</th><th>0.389</th><th>95</th><th>21</th><th>37</th><th>12</th><th>0</th><th>5</th><th>24</th><th>0</th><th>1</th><th>15</th><th>0</th><th>15</th><th>3</th><th>0.389</th></tr>
-</tfoot>
-<tbody>
+</tbody><tbody>
 <tr>
 <td>05.01</td>
 <td>LG</td>
@@ -983,34 +894,7 @@
 <td>0</td>
 <td>0.389</td>
 </tr>
-</tbody>
-</table>
-<table cellpadding="0" cellspacing="0" class="tData01 tt mgb5" summary="통산기록">
-<thead>
-<tr>
-<th>6월</th>
-<th>상대</th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타율">AVG1</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타수">AB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="득점">R</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="안타">H</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="2루타">2B</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="3루타">3B</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="홈런">HR</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타점">RBI</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="도루">SB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="도루실패">CS</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="볼넷">BB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="사구">HBP</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="삼진">SO</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="병살타">GDP</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="시즌누적 타율">AVG2</a></th>
-</tr>
-</thead>
-<tfoot class="play_record">
-<tr><th colspan="2">합계</th><th>0.316</th><th>79</th><th>13</th><th>25</th><th>6</th><th>1</th><th>3</th><th>11</th><th>0</th><th>0</th><th>14</th><th>0</th><th>16</th><th>3</th><th>0.366</th></tr>
-</tfoot>
-<tbody>
+</tbody><tbody>
 <tr>
 <td>06.02</td>
 <td>한화</td>
@@ -1410,34 +1294,7 @@
 <td>1</td>
 <td>0.366</td>
 </tr>
-</tbody>
-</table>
-<table cellpadding="0" cellspacing="0" class="tData01 tt mgb5" summary="통산기록">
-<thead>
-<tr>
-<th>7월</th>
-<th>상대</th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타율">AVG1</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타수">AB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="득점">R</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="안타">H</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="2루타">2B</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="3루타">3B</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="홈런">HR</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타점">RBI</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="도루">SB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="도루실패">CS</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="볼넷">BB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="사구">HBP</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="삼진">SO</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="병살타">GDP</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="시즌누적 타율">AVG2</a></th>
-</tr>
-</thead>
-<tfoot class="play_record">
-<tr><th colspan="2">합계</th><th>0.400</th><th>75</th><th>16</th><th>30</th><th>6</th><th>0</th><th>2</th><th>15</th><th>1</th><th>1</th><th>8</th><th>0</th><th>8</th><th>3</th><th>0.374</th></tr>
-</tfoot>
-<tbody>
+</tbody><tbody>
 <tr>
 <td>07.01</td>
 <td>삼성</td>
@@ -1818,34 +1675,7 @@
 <td>0</td>
 <td>0.374</td>
 </tr>
-</tbody>
-</table>
-<table cellpadding="0" cellspacing="0" class="tData01 tt mgb5" summary="통산기록">
-<thead>
-<tr>
-<th>8월</th>
-<th>상대</th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타율">AVG1</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타수">AB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="득점">R</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="안타">H</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="2루타">2B</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="3루타">3B</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="홈런">HR</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타점">RBI</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="도루">SB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="도루실패">CS</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="볼넷">BB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="사구">HBP</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="삼진">SO</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="병살타">GDP</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="시즌누적 타율">AVG2</a></th>
-</tr>
-</thead>
-<tfoot class="play_record">
-<tr><th colspan="2">합계</th><th>0.299</th><th>107</th><th>18</th><th>32</th><th>4</th><th>0</th><th>2</th><th>18</th><th>0</th><th>0</th><th>8</th><th>0</th><th>14</th><th>0</th><th>0.355</th></tr>
-</tfoot>
-<tbody>
+</tbody><tbody>
 <tr>
 <td>08.01</td>
 <td>NC</td>
@@ -2321,34 +2151,7 @@
 <td>0</td>
 <td>0.355</td>
 </tr>
-</tbody>
-</table>
-<table cellpadding="0" cellspacing="0" class="tData01 tt mgb5" summary="통산기록">
-<thead>
-<tr>
-<th>9월</th>
-<th>상대</th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타율">AVG1</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타수">AB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="득점">R</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="안타">H</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="2루타">2B</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="3루타">3B</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="홈런">HR</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타점">RBI</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="도루">SB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="도루실패">CS</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="볼넷">BB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="사구">HBP</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="삼진">SO</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="병살타">GDP</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="시즌누적 타율">AVG2</a></th>
-</tr>
-</thead>
-<tfoot class="play_record">
-<tr><th colspan="2">합계</th><th>0.410</th><th>83</th><th>10</th><th>34</th><th>5</th><th>0</th><th>2</th><th>23</th><th>1</th><th>0</th><th>10</th><th>1</th><th>10</th><th>2</th><th>0.364</th></tr>
-</tfoot>
-<tbody>
+</tbody><tbody>
 <tr>
 <td>09.01</td>
 <td>LG</td>
@@ -2786,34 +2589,7 @@
 <td>0</td>
 <td>0.364</td>
 </tr>
-</tbody>
-</table>
-<table cellpadding="0" cellspacing="0" class="tData01 tt mgb5" summary="통산기록">
-<thead>
-<tr>
-<th>10월</th>
-<th>상대</th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타율">AVG1</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타수">AB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="득점">R</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="안타">H</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="2루타">2B</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="3루타">3B</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="홈런">HR</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="타점">RBI</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="도루">SB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="도루실패">CS</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="볼넷">BB</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="사구">HBP</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="삼진">SO</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="병살타">GDP</a></th>
-<th><a onmouseenter="tooltip(this)" onmouseout="hideTip()" title="시즌누적 타율">AVG2</a></th>
-</tr>
-</thead>
-<tfoot class="play_record">
-<tr><th colspan="2">합계</th><th>0.222</th><th>9</th><th>3</th><th>2</th><th>1</th><th>0</th><th>1</th><th>3</th><th>0</th><th>0</th><th>2</th><th>0</th><th>1</th><th>0</th><th>0.362</th></tr>
-</tfoot>
-<tbody>
+</tbody><tbody>
 <tr>
 <td>10.01</td>
 <td>한화</td>
@@ -2872,5 +2648,3 @@
 <td>0.362</td>
 </tr>
 </tbody>
-</table>
-</div>
