@@ -1,8 +1,7 @@
-class player:
+class Player(object):
 
-    def player(playerId, name, postion, team):
-        self.playerId = playerId
+    def __init__(self,name, team):
         self.name = name
-        self.position = position
+        self.playerId = 0
         self.team = team
-        self.playes = []
+        self.games = []

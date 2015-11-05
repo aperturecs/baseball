@@ -1,26 +1,40 @@
 #-*- coding: utf-8 -*-
 import requests
 from game import Game
+from player import Player
 from bs4 import BeautifulSoup
 import json
 import sys
 
 def htmlParsing(request):
     records = []
+    print request.content
+
     soup = BeautifulSoup(request.content, 'html.parser')
+    player_info_html = soup.find("div",{"class" :  "player_info"})
 
     try:
         player_records_html = soup.find("div",{ "class" : "player_records" }).findAll("tbody")
-    except:
-        print "해당 연도 또는 선수 데이터가 없습니다."
+    except Exception,e:
         return None
 
     for text in player_records_html:
         text = text.findAll("tr")
+
+        if len(text) == 1:
+            return None
+
         for data in text:
             data = data.findAll("td")
             records.append(data)
-    return records
+
+    player_name = player_info_html.find(id="cphContainer_cphContents_playerProfile_lblName").string
+    player_team = player_info_html.h4.string
+
+    player = Player(player_name,player_team)
+
+    return {"player":player, "records":records}
+
 
 def httpRequest(playerId, year):
 
@@ -37,10 +51,12 @@ def httpRequest(playerId, year):
 
     header = {
         "Content-Type":"application/x-www-form-urlencoded"
+
     }
 
     try:
         request = requests.post("http://www.koreabaseball.com/Record/Player/HitterDetail/Daily.aspx?playerId="+str(playerId), data = params, headers=header)
+        print "http://www.koreabaseball.com/Record/Player/HitterDetail/Daily.aspx?playerId="+str(playerId)
     except:
         print "네트워크 요청에 실패하였습니다."
         sys.exit()
@@ -65,11 +81,23 @@ def dataParsing(datas):
 
 
 def gameParsing(year,datas):
-    if len(datas) == 0:
+    if datas == None:
         return []
     datas = dataParsing(datas)
     games = []
     for d in datas:
+        print d
         game = Game(year,d[0],d[1],d[2],d[3],d[4],d[5],d[5],d[6],d[7],d[8],d[9],d[10],d[11],d[12],d[13],d[14],d[15])
         games.append(game)
     return games
+
+
+def playerSave(players):
+    print players
+    f = open("result.txt","w")
+    for player in players:
+        f.write(str({"playerId":player.playerId,"name":player.name,"team":player.team})+"\n")
+        for game in player.games:
+            f.write(str(game.__dict__)+"\n")
+        f.write("\n")
+    f.close()
