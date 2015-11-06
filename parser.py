@@ -90,6 +90,7 @@ def gameParsing(year,datas):
         games.append(game)
     return games
 
+<<<<<<< Updated upstream
 
 def playerSave(players):
     print players
@@ -99,4 +100,9 @@ def playerSave(players):
         for game in player.games:
             f.write(str(game.__dict__)+"\n")
         f.write("\n")
+=======
+def savedatalist():
+    f = open("data.json", "w")
+    f.write(str(array))
+>>>>>>> Stashed changes
     f.close()
