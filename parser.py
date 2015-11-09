@@ -124,7 +124,6 @@ def gameDataParsing(year,datas):
         games.append(game)
     return games
 
-<<<<<<< HEAD
 def pitcherGameDataParsing(year,datas):
     if len(datas) == 0:
         return []
@@ -197,21 +196,3 @@ def parsing(player,postion):
                 games.append(game)
 
     return games
-=======
-<<<<<<< Updated upstream
-
-def playerSave(players):
-    print players
-    f = open("result.txt","w")
-    for player in players:
-        f.write(str({"playerId":player.playerId,"name":player.name,"team":player.team})+"\n")
-        for game in player.games:
-            f.write(str(game.__dict__)+"\n")
-        f.write("\n")
-=======
-def savedatalist():
-    f = open("data.json", "w")
-    f.write(str(array))
->>>>>>> Stashed changes
-    f.close()
->>>>>>> origin/master
