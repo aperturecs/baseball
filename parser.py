@@ -151,7 +151,7 @@ def playerSave(f,player):
     f.write("\n")
 
 def fileParser():
-    with codecs.open("result.txt",'r',encoding='utf8') as f:
+    with codecs.open("result2.txt",'r',encoding='utf8') as f:
         lines = f.readlines()
 
     players = []
