@@ -34,10 +34,18 @@ def PitcherParsing(request):
     records = []
     soup = BeautifulSoup(request.content, 'html.parser')
 
-    tables = soup.find("div",{ "class" : "player_records" }).findAll("table")
+    try:
+        tables = soup.find("div",{ "class" : "player_records" }).findAll("table")
+    except:
+        return None
+
 
     for table in tables:
         tbody = table.find("tbody").findAll("tr")
+
+        if len(tbody) == 1:
+            return []
+
         for data in tbody:
             data = data.findAll("td")
             records.append(data)
@@ -186,11 +194,12 @@ def parsing(player,postion):
     for year in range(2010,2016):
         request = httpRequest(player.playerId,year,postion)
 
-        if postion == "Hitter":
+        if player.type == "Hitter":
             datas = HitterParsing(request)
             for game in gameDataParsing(year,datas):
                 games.append(game)
-        if postion == "Pitcher":
+
+        if player.type == "Pitcher":
             datas = PitcherParsing(request)
             for game in pitcherGameDataParsing(year,datas):
                 games.append(game)

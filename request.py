@@ -10,16 +10,16 @@ sys.setdefaultencoding('utf-8')
 
 result = []
 codes = PlayerCode()
-f = open("result2.txt","w")
-#f = open("result.txt","w")
-errorList = []
-errorLists = [61240, 61268, 77229, 76329, 78257, 72749, 72523, 61895, 75138, 72862, 77854, 76822, 74857, 64907, 62920, 62920, 78366, 97571, 62929, 64021, 63512, 76540, 74167, 63935, 72551, 62655, 61411, 95657, 79440, 62919, 65764, 79760, 64764, 62451, 73750, 78760, 62919, 65764, 79760, 64764, 73750, 78760, 62451, 62349, 78823, 71255, 65643, 65639, 65639, 63638, 65658, 65630, 75620, 97336, 76610, 61666, 65659, 61643]
 
+f = open("result.txt","w")
+
+errorList = []
 start_time = 0
 count = 1
 
 
-for playerId in errorLists:
+for playerId in codes.codes:
+
     try:
         start_time = time.time()
         request = parser.httpRequest(playerId,2014,"Hitter")
@@ -42,6 +42,7 @@ for playerId in errorLists:
         print "진행현황 : "+str(count)+"/"+ str(len(codes.codes))
         print "-------------------------------"
         count +=1
+
     except:
         print "*******************************"
         print "선수 Id :"+str(playerId) +"에러 발생"
