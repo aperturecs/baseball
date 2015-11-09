@@ -21,3 +21,4 @@ class Game(object):
         self.SO = SO
         self.GDP = GDP
         self.AVG2 = AVG2
+
