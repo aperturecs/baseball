@@ -2,6 +2,7 @@ class PlayerCode:
 
     def __init__(self):
         self.codes = [
+77637,
 60288
 ,79215
 ,72214
