@@ -1,5 +1,5 @@
 class HitterProfile:
-    def __init__:
+    def __init__(self, Team, AVG, G, PA, AB, R, H, B2, B3, HR, TB, RBI, SB, CS, SAC, SF, BB, IBB, HBP, SO, GDP, SLG, OBP, E, SB, MH, OPS, RISP, PHBA):
         self.Team = Team
         self.AVG = AVG
         self.G = G
@@ -7,8 +7,8 @@ class HitterProfile:
         self.AB = AB
         self.R = R
         self.H = H
-        self.2B = 2B
-        self.3B = 3B
+        self.2B = B2
+        self.3B = B3
         self.HR = HR
         self.TB = TB
         self.RBI = RBI
@@ -28,4 +28,4 @@ class HitterProfile:
         self.MH = MH
         self.OPS = OPS
         self.RISP = RISP
-        self.PH-BA = PH-BA
+        self.PHBA = PHBA

@@ -1,5 +1,5 @@
 class PitcherProfile:
-    def __init__(Team, ERA, G, CG, SHO, W, L, SV, HLD, WPCT, TBF, NP, IP, H, 2B, 3B, HR, SAC, SF, BB, SO, WP, BK, R, ER, BSV, WHIP, AVG, QS):
+    def __init__(self, Team, ERA, G, CG, SHO, W, L, SV, HLD, WPCT, TBF, NP, IP, H, B2, B3, HR, SAC, SF, BB, SO, WP, BK, R, ER, BSV, WHIP, AVG, QS):
         self.Team = Team
         self.ERA = ERA
         self.G = G
@@ -14,8 +14,8 @@ class PitcherProfile:
         self.NP = NP
         self.IP = IP
         self.H = H
-        self.2B = 2B
-        self.3B = 3B
+        self.2B = B2
+        self.3B = B3
         self.HR = HR
         self.SAC = SAC
         self.SF = SF
