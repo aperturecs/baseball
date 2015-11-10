@@ -3,14 +3,14 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-import hitterProfileParser
+import pitcherProfileParser
 import playerParser
 from player import Player
 
-code = 64914
+code = 63938
 
 player = playerParser.playerParsing(code)
-hitterProfileParser.hitterProfileParsing(player)
+pitcherProfileParser.pitcherProfileParsing(player)
 # pitcherGameParser.pitcherGameParsing(player)
 # print player.name
 #
