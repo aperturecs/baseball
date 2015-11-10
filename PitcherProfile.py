@@ -1,5 +1,6 @@
 class PitcherProfile:
-    def __init__(self, Team, ERA, G, CG, SHO, W, L, SV, HLD, WPCT, TBF, NP, IP, H, B2, B3, HR, SAC, SF, BB, SO, WP, BK, R, ER, BSV, WHIP, AVG, QS):
+    def __init__(self,playerId,Team, ERA, G, CG, SHO, W, L, SV, HLD, WPCT, TBF, NP, IP, H, B2, B3, HR, SAC, SF, BB, SO, WP, BK, R, ER, BSV, WHIP, AVG, QS):
+        self.playerId = playerId
         self.Team = Team
         self.ERA = ERA
         self.G = G
