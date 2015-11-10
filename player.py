@@ -10,3 +10,4 @@ class Player(object):
         self.position_detail = position_detail
         self.hitterGames = []
         self.pitcherGames =[]
+        self.finalscore = None

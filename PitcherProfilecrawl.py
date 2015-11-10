@@ -6,7 +6,7 @@ from pitcherGame import PitcherGame
 from player import Player
 
 
-def pitcherGameParsing(player):
+def pitcherProfileParsing(player):
     header = {
         "Content-Type":"application/x-www-form-urlencoded",
         "Cache-Control": "no-cache",
@@ -23,13 +23,8 @@ def pitcherGameParsing(player):
         "ctl00$ctl00$cphContainer$cphContents$ddlYear":"2010"
     }
 
-    for year in range(2010,2016):
-        try:
-            params["ctl00$ctl00$cphContainer$cphContents$ddlYear"] = str(year)
-            request = requests.post("http://www.koreabaseball.com/Record/Player/PitcherDetail/Daily.aspx?playerId="+str(player.playerId), data=params, headers=header)
-        except:
-            print "네트워크 요청에 실패하였습니다."
-            sys.exit()
+
+        request = requests.post("http://www.koreabaseball.com/Record/Player/PitcherDetail/Basic.aspx?playerId="+str(player.playerId), data=params, headers=header)
 
         soup = BeautifulSoup(request.content, 'html.parser')
 
