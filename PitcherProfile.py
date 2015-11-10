@@ -14,8 +14,8 @@ class PitcherProfile:
         self.NP = NP
         self.IP = IP
         self.H = H
-        self.2B = B2
-        self.3B = B3
+        self.B2 = B2
+        self.B3 = B3
         self.HR = HR
         self.SAC = SAC
         self.SF = SF
