@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 class PitcherGame:
 
     def __init__(self,year,date,sideTeam,position,result,ERA1,TBF,IP,H,HR,BB,HBP,SO,R,ER,ERA2):
