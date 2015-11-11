@@ -68,3 +68,5 @@ class PitcherProfile:
         sql += str(self.QS)
         sql += ");"
         return sql
+
+        

@@ -65,3 +65,4 @@ class HitterProfile:
         sql += str(self.PHBA)
         sql += ");"
         return sql
+        
