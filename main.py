@@ -5,16 +5,36 @@ sys.setdefaultencoding('utf-8')
 
 import pitcherProfileParser
 import hitterProfileParser
+import hitterGameParser
+import pitcherGameParser
 import playerParser
+# from query import Query
 from player import Player
+from playerCode import PlayerCode
 
-code = 64914
+codes = PlayerCode()
+# query = Query()
 
-player = playerParser.playerParsing(code)
-# pitcherProfileParser.pitcherProfileParsing(player)
-hitterProfileParser.hitterProfileParsing(player)
-# pitcherGameParser.pitcherGameParsing(player)
-# print player.name
-#
-# for game in player.pitcherGames:
-#     print game.__dict__
+for code in codes.codes:
+    player = playerParser.playerParsing(code)
+    print player.addQuery()
+    if player.type =="Hitter":
+        hitterProfileParser.hitterProfileParsing(player)
+        hitterGameParser.hitterGameParsing(player)
+        # query.quering_add(player.addQuery())
+        # query.quering_add(player.profile.addQuery())
+        print player.profile.addQuery()
+        for game in player.hitterGames:
+            # query.quering_add(game.addQuery())
+             print game.addQuery()
+
+    else:
+        pitcherProfileParser.pitcherProfileParsing(player)
+        pitcherGameParser.pitcherGameParsing(player)
+        # query.quering_add(player.addQuery())
+        # query.quering_add(player.profile.addQuery())
+        print player.profile.addQuery()
+        for game in player.pitcherGames:
+            #query.quering_add(game.addQuery())
+             print game.addQuery()
+    print "이름 :"+ player.name + " 팀 :"+player.team  +" 타입 :"+player.type

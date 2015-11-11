@@ -10,4 +10,16 @@ class Player(object):
         self.position_detail = position_detail
         self.hitterGames = []
         self.pitcherGames =[]
-        self.finalscore = None
+        self.profile = None;
+
+    def addQuery(self):
+        sql = "INSERT INTO players (type, playerId, name, team, position, position_detail, image) VALUES("
+        sql += "'" + str(self.type) +"',"
+        sql += str(self.playerId) +","
+        sql += "'" + str(self.name) +"',"
+        sql += "'" + str(self.team) +"',"
+        sql += "'" + str(self.position) +"',"
+        sql += "'" + str(self.position_detail) +"',"
+        sql += "'" + str(self.image) +"'"
+        sql += ");"
+        return sql

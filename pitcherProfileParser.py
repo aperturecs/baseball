@@ -33,6 +33,5 @@ def pitcherProfileParsing(player):
         if t == "-":
             t = 0
         data.append(t)
-    print data
 
-    player.profile = PitcherProfile(player.playerId, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13], data[14], data[15], data[16], data[17], data[18], data[19], data[20], data[21], data[22], data[23],data[24],data[25],data[26],data[27],data[28],data[29])
+    player.profile = PitcherProfile(player.playerId, data[0], float(data[1]), int(data[2]), int(data[3]), int(data[4]), int(data[5]), int(data[6]), int(data[7]), int(data[8]), float(data[9]), int(data[10]), int(data[11]), data[12], int(data[13]), int(data[14]), int(data[15]), int(data[16]), int(data[17]), int(data[18]), int(data[19]), int(data[20]), int(data[21]), int(data[22]), int(data[23]),int(data[24]),int(data[25]),int(data[26]),float(data[27]),float(data[28]),int(data[29]))

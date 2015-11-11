@@ -22,3 +22,27 @@ class HitterGame():
         self.SO = SO
         self.GDP = GDP
         self.AVG2 = AVG2
+    def addQuery(self):
+        sql = "INSERT INTO HitterGames(type, year, month, day , sideTeam, AVG1, AB, R, H, B2, B3, HR, RBI, SB, CS, BB, HBP, SO, GDP, AVG2) VALUES("
+        sql += "'" + str(self.type) + "',"
+        sql += str(self.year)+","
+        sql += str(self.month)+","
+        sql += str(self.day)+","
+        sql += "'" + str(self.sideTeam) + "',"
+        sql += str(self.AVG1)+","
+        sql += str(self.AB)+","
+        sql += str(self.R)+","
+        sql += str(self.H)+","
+        sql += str(self.B2)+","
+        sql += str(self.B3)+","
+        sql += str(self.HR)+","
+        sql += str(self.RBI)+","
+        sql += str(self.SB)+","
+        sql += str(self.CS)+","
+        sql += str(self.BB)+","
+        sql += str(self.HBP)+","
+        sql += str(self.SO)+","
+        sql += str(self.GDP)+","
+        sql += str(self.AVG2)
+        sql += ");"
+        return sql
