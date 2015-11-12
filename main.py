@@ -21,7 +21,10 @@ count = 1
 for code in codes.codes:
     player = playerParser.playerParsing(code)
     if player.type =="Hitter":
-        hitterProfileParser.hitterProfileParsing(player)
+        if hitterProfileParser.hitterProfileParsing(player) == None:
+            count +=1
+            print "에러"
+            continue
         hitterGameParser.hitterGameParsing(player)
         # query.quering_add(player.addQuery())
         # query.quering_add(player.profile.addQuery())
@@ -33,7 +36,10 @@ for code in codes.codes:
 
 
     else:
-        pitcherProfileParser.pitcherProfileParsing(player)
+        if pitcherProfileParser.pitcherProfileParsing(player) == None:
+            count +=1
+            print "에러"
+            continue
         pitcherGameParser.pitcherGameParsing(player)
         # query.quering_add(player.addQuery())
         # query.quering_add(player.profile.addQuery())

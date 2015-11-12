@@ -5,8 +5,7 @@ CREATE TABLE players(
   team Char(10) NOT NULL,
   position Char(10) NOT NULL,
   position_detail Char(10) NOT NULL,
-  image Char(100) NOT NULL,
-  PRIMARY KEY (playerId)
+  image Char(100) NOT NULL
 );
 
 CREATE TABLE HitterGames(
