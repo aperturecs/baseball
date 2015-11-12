@@ -4,7 +4,7 @@ class Query:
     def __init__(self):
         try:
             self.con = mdb.connect('localhost', 'cpd', '12341234', 'busstation');
-            self.cur = con.cursor()
+            self.cur = self.con.cursor()
             self.cur.execute("SELECT VERSION()")
             ver = cur.fetchone()
             print "Database version : %s " % ver
