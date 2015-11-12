@@ -5,6 +5,7 @@ class Query:
         try:
             self.con = mdb.connect('localhost', 'cpd', '12341234', 'busstation');
             self.cur = self.con.cursor()
+            self.cur.execute("SET NAMES utf8")
             self.cur.execute("SELECT VERSION()")
             ver = self.cur.fetchone()
             print "Database version : %s " % ver
