@@ -1,7 +1,8 @@
 import json
 class HitterGame():
 
-    def __init__(self, year, date, sideTeam, AVG1, AB, R, H, B2, B3, HR, RBI, SB, CS, BB, HBP, SO, GDP, AVG2):
+    def __init__(self, playerId, year, date, sideTeam, AVG1, AB, R, H, B2, B3, HR, RBI, SB, CS, BB, HBP, SO, GDP, AVG2):
+        self.playerId = playerId
         self.type= "Hitter"
         self.year = year
         self.month = int(date.split(".")[0])
@@ -23,7 +24,8 @@ class HitterGame():
         self.GDP = GDP
         self.AVG2 = AVG2
     def addQuery(self):
-        sql = "INSERT INTO HitterGames(type, year, month, day , sideTeam, AVG1, AB, R, H, B2, B3, HR, RBI, SB, CS, BB, HBP, SO, GDP, AVG2) VALUES("
+        sql = "INSERT INTO HitterGames(playerId,type, year, month, day , sideTeam, AVG1, AB, R, H, B2, B3, HR, RBI, SB, CS, BB, HBP, SO, GDP, AVG2) VALUES("
+        sql += str(self.playerId) + ","
         sql += "'" + str(self.type) + "',"
         sql += str(self.year)+","
         sql += str(self.month)+","

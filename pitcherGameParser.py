@@ -54,4 +54,4 @@ def pitcherGameParsing(player):
                         content = 0
                     data.append(content)
 
-                player.pitcherGames.append(PitcherGame(year,data[0],data[1],data[2],data[3],float(data[4]),int(data[5]),data[6],int(data[7]),int(data[8]),int(data[9]),int(data[10]),int(data[11]),int(data[12]),int(data[13]),float(data[14])))
+                player.pitcherGames.append(PitcherGame(player.playerId,year,data[0],data[1],data[2],data[3],float(data[4]),int(data[5]),data[6],int(data[7]),int(data[8]),int(data[9]),int(data[10]),int(data[11]),int(data[12]),int(data[13]),float(data[14])))

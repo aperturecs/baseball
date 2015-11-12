@@ -1,7 +1,8 @@
 #-*- coding: utf-8 -*-
 class PitcherGame:
 
-    def __init__(self,year,date,sideTeam,position,result,ERA1,TBF,IP,H,HR,BB,HBP,SO,R,ER,ERA2):
+    def __init__(self,playerId,year,date,sideTeam,position,result,ERA1,TBF,IP,H,HR,BB,HBP,SO,R,ER,ERA2):
+        self.playerId = playerId
         self.type= "Pitcher"
         self.year = year
         self.month = int(date.split(".")[0])
@@ -28,7 +29,8 @@ class PitcherGame:
         self.ERA2 = ERA2
 
     def addQuery(self):
-        sql = "INSERT INTO PitcherGames (type,year,month,day,sideTeam,position,win,ERA1,TBF,IP,H,HR,BB,HBP,SO,R,ER,ERA2) VALUES("
+        sql = "INSERT INTO PitcherGames (playerId,type,year,month,day,sideTeam,position,win,ERA1,TBF,IP,H,HR,BB,HBP,SO,R,ER,ERA2) VALUES("
+        sql += str(self.playerId) + ","
         sql += "'"+str(self.type) + "',"
         sql += str(self.year) + ","
         sql += str(self.month) + ","

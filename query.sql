@@ -1,3 +1,9 @@
+drop table players;
+drop table HitterGames;
+drop table PitcherGames;
+drop table HitterProfiles;
+drop table PitcherProfiles;
+
 CREATE TABLE players(
   playerId int NOT NULL,
   type Char(10) NOT NULL,
