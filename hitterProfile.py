@@ -1,35 +1,35 @@
 class HitterProfile:
     def __init__(self,playerId, Team, AVG, G, PA, AB, R, H, B2, B3, HR, TB, RBI, SB, CS, SAC, SF, BB, IBB, HBP, SO, GDP, SLG, OBP, E, SBP, MH, OPS, RISP, PHBA):
-        self.playerId = playerId
-        self.team = Team
-        self.AVG = AVG
-        self.G = G
-        self.PA = PA
-        self.AB = AB
-        self.R = R
-        self.H = H
-        self.B2 = B2
-        self.B3 = B3
-        self.HR = HR
-        self.TB = TB
-        self.RBI = RBI
-        self.SB = SB
-        self.CS = CS
-        self.SAC = SAC
-        self.SF = SF
-        self.BB = BB
-        self.IBB = IBB
-        self.HBP = HBP
-        self.SO = SO
-        self.GDP = GDP
-        self.SLG = SLG
-        self.OBP = OBP
-        self.E = E
-        self.SBP = SBP
-        self.MH = MH
-        self.OPS = OPS
-        self.RISP = RISP
-        self.PHBA = PHBA
+        self.playerId = playerId #플레이어
+        self.team = Team #소속 팀
+        self.AVG = AVG #타율
+        self.G = G #출장 경기
+        self.PA = PA #타석
+        self.AB = AB #타수
+        self.R = R #득점
+        self.H = H #안타
+        self.B2 = B2 #2루타
+        self.B3 = B3 #3루타
+        self.HR = HR #홈런
+        self.TB = TB #토탈베이스
+        self.RBI = RBI #타점
+        self.SB = SB #도루
+        self.CS = CS #도루 실패
+        self.SAC = SAC #희생번트
+        self.SF = SF #희생플라이
+        self.BB = BB #볼넷
+        self.IBB = IBB #고의사구
+        self.HBP = HBP #몸에 맞는 공
+        self.SO = SO #삼진
+        self.GDP = GDP #병살타
+        self.SLG = SLG #장타율
+        self.OBP = OBP #출루율
+        self.E = E #실책
+        self.SBP = SBP #도루 성공률
+        self.MH = MH #멀티히트
+        self.OPS = OPS #출루율+장타율
+        self.RISP = RISP #득점권 타율
+        self.PHBA = PHBA #PH-BA
 
     def addQuery(self):
         sql = "INSERT INTO HitterProfiles (playerId, Team, AVG, G, PA, AB, R, H, B2, B3, HR, TB, RBI, SB, CS, SAC, SF, BB, IBB, HBP, SO, GDP, SLG, OBP, E, SBP, MH, OPS, RISP, PHBA) VALUES("
@@ -65,4 +65,3 @@ class HitterProfile:
         sql += str(self.PHBA)
         sql += ");"
         return sql
-        

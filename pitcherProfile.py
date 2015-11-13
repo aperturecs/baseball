@@ -1,37 +1,37 @@
 class PitcherProfile:
 
     def __init__(self, playerId ,Team, ERA, G, CG, SHO, W, L, SV, HLD, WPCT, TBF, NP, IP, H, B2, B3, HR, SAC, SF, BB, IBB, SO, WP, BK, R, ER, BSV, WHIP, AVG, QS):
-        self.playerId = playerId
-        self.Team = Team
-        self.ERA = ERA
-        self.G = G
-        self.CG = CG
-        self.SHO = SHO
-        self.W = W
-        self.L = L
-        self.SV = SV
-        self.HLD = HLD
-        self.WPCT = WPCT
-        self.TBF = TBF
-        self.NP = NP
-        self.IP = int(IP.split(" ")[0])
-        self.H = H
-        self.B2 = B2
-        self.B3 = B3
-        self.HR = HR
-        self.SAC = SAC
-        self.SF = SF
-        self.BB = BB
-        self.IBB = IBB
-        self.SO = SO
-        self.WP = WP
-        self.BK = BK
-        self.R = R
-        self.ER = ER
-        self.BSV = BSV
-        self.WHIP = WHIP
-        self.AVG = AVG
-        self.QS = QS
+        self.playerId = playerId #플레이어
+        self.Team = Team #소속 팀
+        self.ERA = ERA #평균 자책점
+        self.G = G #경기
+        self.CG = CG #완투
+        self.SHO = SHO #셧아웃(완봉)
+        self.W = W #승리
+        self.L = L #패배
+        self.SV = SV #세이브
+        self.HLD = HLD #홀드
+        self.WPCT = WPCT #승률
+        self.TBF = TBF #타자수
+        self.NP = NP #투구수
+        self.IP = int(IP.split(" ")[0]) #이닝
+        self.H = H #피안타
+        self.B2 = B2 #2루타
+        self.B3 = B3 #3루타
+        self.HR = HR #홈런
+        self.SAC = SAC #희생번트
+        self.SF = SF #희생플라이
+        self.BB = BB #볼넷
+        self.IBB = IBB #고의사구
+        self.SO = SO #삼진
+        self.WP = WP #폭투
+        self.BK = BK #투수 보크
+        self.R = R #실점
+        self.ER = ER #자책점
+        self.BSV = BSV #블론 세이브
+        self.WHIP = WHIP #이닝당 출루허용률
+        self.AVG = AVG #피안타율
+        self.QS = QS #퀄리티스타트
 
     def addQuery(self):
         sql = "INSERT INTO PitcherProfiles (playerId ,Team, ERA, G, CG, SHO, W, L, SV, HLD, WPCT, TBF, NP, IP, H, B2, B3, HR, SAC, SF, BB, IBB, SO, WP, BK, R, ER, BSV, WHIP, AVG, QS) VALUES("
@@ -68,5 +68,3 @@ class PitcherProfile:
         sql += str(self.QS)
         sql += ");"
         return sql
-
-        
