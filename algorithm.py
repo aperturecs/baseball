@@ -9,6 +9,6 @@ queries = sql.quering_select("Select * from HitterGames where playerId=79453")
 games = []
 
 for query in queries:
-    game = HitterGame(query[1],query[2],query[3],query[4],query[5],query[6],query[7],query[8],query[9],query[10],query[11],query[12],query[13],query[14],query[15],query[16],query[17],query[18],query[19],query[20]
+    game = HitterGame(query[1],query[2],query[3],query[4],query[5],query[6],query[7],query[8],query[9],query[10],query[11],query[12],query[13],query[14],query[15],query[16],query[17],query[18],query[19],query[20])
     print game.__dict__
     games.append(game)
