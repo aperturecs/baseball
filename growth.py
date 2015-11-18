@@ -1,5 +1,6 @@
 #coding:utf-8
 from hitterProfile import HitterProfile
+from hitterGame import HitterGame
 
 
 # 맨처음 경기 한 달부터 지금까지의 ops성장률
@@ -16,7 +17,8 @@ from hitterProfile import HitterProfile
 #     -> 알고리즘 돌리기
 
 Games = [] #전체 경기 데이터
-OPS_A = [] #매 경기 OPS
+OPS_A = [] #매월 경기 OPS
+
 
 for game in Games:
     OBP = (game.H + game.BB + game.HBP)/(game.AB + game.BB + game.SF + game.HBP)
