@@ -39,14 +39,12 @@ for year in range(2010,2015):
 
 OPS_A = [] #매월 경기 OPS
 
-for year in range(2010, 2015):
-    for month in range(3, 10):
-        for i in Games:
-            if Games[i]["year"]==year and Games[i]["month"]==month:
-                OBP = (Games[i]["H"] + Games[i]["BB"] + Games[i]["HBP"])/(Games[i]["AB"] + Games[i]["BB"] + Games[i]["HBP"])
-                SLG = Games[i]["TB"]/Games[i]["AB"]
-                OPS = OBP + SLG
-                OPS_A.append({"year":year, "month":month, "ops":OPS}) #계산한 OPS 매월별 집어넣기
+for game in Games:
+    if game["year"]==year and game["month"]==month:
+        OBP = (game["H"] + game["BB"] + game["HBP"])/(game["AB"] + game["BB"] + game["HBP"])
+        SLG = game["TB"]/game["AB"]
+        OPS = OBP + SLG
+        OPS_A.append({"year":year, "month":month, "ops":OPS}) #계산한 OPS 매월별 집어넣기
 
 OPS_y =[] #OPS 성장률 y값
 OPS_f = OPS_A[0]["ops"] #맨 처음 경기 OPS
