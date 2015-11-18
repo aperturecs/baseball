@@ -2,21 +2,27 @@
 from hitterProfile import HitterProfile
 from hitterGame import HitterGame
 
+def find(year, month):
+    for game in games:
+        if game.year == year and game.month:
+            games.append(game)
 
-# 맨처음 경기 한 달부터 지금까지의 ops성장률
-# 첫번째 ops a1
-# n번째 ops an
-# y = an-a1
+    return games
 
+Games = []
 
-# 1. 모든 게임 정보
-#     -> 디비에서 긁어오고, 클래스화 시키고, 넘기기
-# 2. 월단위로 줄이고
-#     -> 다 더하기
-# 3. 성장률 구하기
-#     -> 알고리즘 돌리기
+for year in range(2010,2015):
+    for month in range(3,10):
+        tempGame = {"year":year,"month":month,"OPS":0.0,"H":0,"BB":0,"HBP":0,"AB":0,"HBP":0,"TB":0})
+        tempGames = find(year,month)
+        for game in tempGames:
+            tempGame["H"] += game.H
+            tempGame["BB"]+= game.BB
+            tempGame["HBP"]+= game.HBP
+            tempGame["AB"]+=game.AB
+            tempGame["TB"]+= game.H + game.2B*2 + game.3B*3 + game.HR*4
+        Games.appned(tempGame)
 
-Games = [] #전체 경기 데이터
 OPS_A = [] #매월 경기 OPS
 
 
