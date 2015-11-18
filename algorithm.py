@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 from hitterGame import HitterGame
 from query import Query
 
@@ -26,14 +27,14 @@ Games = []
 
 for year in range(2010,2015):
     for month in range(3,10):
-        tempGame = {"year":year,"month":month,"OPS":0.0,"H":0,"BB":0,"HBP":0,"AB":0,"HBP":0,"TB":0})
+        tempGame = {"year":year,"month":month,"OPS":0.0,"H":0,"BB":0,"HBP":0,"AB":0,"HBP":0,"TB":0}
         tempGames = find(year, month)
         for game in tempGames:
             tempGame["H"] += game.H
             tempGame["BB"]+= game.BB
             tempGame["HBP"]+= game.HBP
             tempGame["AB"]+=game.AB
-            tempGame["TB"]+= game.H + game.2B*2 + game.3B*3 + game.HR*4
+            tempGame["TB"]+= game.H + game.B2*2 + game.B3*3 + game.HR*4
         Games.append(tempGame) # [{"year":year,"month":month,"OPS":0.0,"H":0,"BB":0,"HBP":0,"AB":0,"HBP":0,"TB":0}]
 
 OPS_A = [] #매월 경기 OPS
@@ -42,7 +43,7 @@ for year in range(2010, 2015):
     for month in range(3, 10):
         for i in Games:
             if Games[i]["year"]==year and Games[i]["month"]==month:
-                OBP = (Games[i]["H"] + Games[i].["BB"] + Games[i].["HBP"])/(Games[i]["AB"] + Games[i]["BB"] + Games[i]["HBP"])
+                OBP = (Games[i]["H"] + Games[i]["BB"] + Games[i]["HBP"])/(Games[i]["AB"] + Games[i]["BB"] + Games[i]["HBP"])
                 SLG = Games[i]["TB"]/Games[i]["AB"]
                 OPS = OBP + SLG
                 OPS_A.append({"year":year, "month":month, "ops":OPS}) #계산한 OPS 매월별 집어넣기
