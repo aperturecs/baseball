@@ -41,5 +41,6 @@ for i in OPS_A:
     OPS_growth = OPS_A[i]["ops"] - OPS_f #한 경기 OPS - 맨 처음경기 OPS
     ops_y.append({"year":OPS_A[i]["year"], "month":OPS_A[i]["month"], "ops": OPS_growth}) #ops_y 리스트에 추가
 
+print ops_y
 
 #x축은 시간(경기), y축은 OPS 성장률
