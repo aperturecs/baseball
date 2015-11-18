@@ -50,3 +50,4 @@ for code in codes.codes:
             f.write(game.addQuery()+"\n")
     print "["+str(count)+"/"+str(len(codes.codes))+"] 이름 :"+ player.name + " 팀 :"+player.team  +" 타입 :"+player.type
     count +=1
+    

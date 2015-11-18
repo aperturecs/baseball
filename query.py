@@ -24,7 +24,7 @@ class Query:
     def quering_select(self,sql):
         try:
             self.cur.execute(sql)
-            return self.cur.fetchone()
+            return self.cur.fetchall()
         except mdb.Error, e:
             print "Error %d: %s" % (e.args[0],e.args[1])
             sys.exit(1)

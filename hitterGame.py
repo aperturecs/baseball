@@ -23,6 +23,7 @@ class HitterGame():
         self.SO = SO
         self.GDP = GDP
         self.AVG2 = AVG2
+
     def addQuery(self):
         sql = "INSERT INTO HitterGames(playerId,type, year, month, day , sideTeam, AVG1, AB, R, H, B2, B3, HR, RBI, SB, CS, BB, HBP, SO, GDP, AVG2) VALUES("
         sql += str(self.playerId) + ","
