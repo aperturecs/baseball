@@ -38,7 +38,7 @@ def growth(playerId):
     for game in Games:
         try:
         	OBP = (game["H"] + game["BB"] + game["HBP"])*1.0 / (game["AB"] + game["BB"] + game["HBP"])*1.0
-       	    OBP = round(OBP,4)
+            OBP = round(OBP,4)
     	    SLG = game["TB"] / game["AB"]
         	OPS = OBP + SLG
     	    if OPS > 0.0:
