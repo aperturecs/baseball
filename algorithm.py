@@ -44,7 +44,7 @@ def growth(playerId):
             if OPS > 0.0:
                 OPS_A.append({"year":year, "month":month, "OPS":OPS}) #계산한 OPS 매월별 집어넣기
         except:
-    	pass
+            pass
 
 
     OPS_y =[] #OPS 성장률 y값
