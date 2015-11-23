@@ -13,7 +13,7 @@ Games = []
 
 for year in range(2010,2015):
     for month in range(3,10):
-        tempGame = {"year":year,"month":month,"OPS":0.0,"H":0,"BB":0,"HBP":0,"AB":0,"HBP":0,"TB":0})
+        tempGame = {"year":year,"month":month,"OPS":0.0,"H":0,"BB":0,"HBP":0,"AB":0,"HBP":0,"TB":0}
         tempGames = find(year, month)
         for game in tempGames:
             tempGame["H"] += game.H
