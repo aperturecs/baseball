@@ -42,7 +42,7 @@ def growth(playerId):
             SLG = game["TB"] / game["AB"]
             OPS = OBP + SLG
             if OPS > 0.0:
-                OPS_A.append({"year":year, "month":month, "OPS":OPS}) #계산한 OPS 매월별 집어넣기
+                OPS_A.append({"year":game["year"], "month":game["month"], "OPS":OPS}) #계산한 OPS 매월별 집어넣기
         except:
             pass
 
