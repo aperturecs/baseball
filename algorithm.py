@@ -52,7 +52,7 @@ def growth(playerId):
 
     for OPS in OPS_A:
         OPS_growth = OPS["OPS"] - OPS_f #한 경기 OPS - 맨 처음경기 OPS
-        y = {"year":OPS["year"],"month":OPS["month"], "ops": OPS_growth}
+        y = {"year":OPS["year"],"month":OPS["month"], "growth": OPS_growth}
         OPS_y.append(y) #ops_y 리스트에 추가
 
     return OPS_y

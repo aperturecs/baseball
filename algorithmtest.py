@@ -1,4 +1,6 @@
 #-*- coding: utf-8 -*-
 import algorithm
 
-print algorithm.growth(64914)
+datas = algorithm.growth(64914)
+for data in datas:
+    print datas["growth"]
