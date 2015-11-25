@@ -2,6 +2,42 @@
 from hitterGame import HitterGame
 from query import Query
 
+def getpoint(list, point):
+    max = 0.0
+    min = 100.0
+    for data in list:
+        if max < data:
+            max = data
+        if min > data:
+            min = data
+
+    lenth = max - min
+    size = 100 / lenth
+
+    return round((point - min) * size)
+
+def tupleToList(tup):
+    datas = []
+    results = []
+    if type(tup) == "tuple":
+        datas = list(tup)
+    else:
+        datas = tup
+    for data in datas:
+        if type(data) == "tuple":
+            if len(data) == 1:
+                results.appned(data[0])
+            else
+                result.appned(list(data))
+        else
+            results.append(data)
+
+    if len(results) == 1:
+        return results[0]
+
+    return results
+
+
 def growth(playerId):
 
     sql = Query()
@@ -61,51 +97,45 @@ def stat(playerId):
     sql = Query()
 
     # 장타율
-    SLG_Total = 0.0
     slg_queries = sql.quering_select("Select SLG from HitterProfiles")
-    for SLG in slg_queries:
-        SLG_Total= SLG_Total + SLG[0]
-    SLG_Total = SLG_Total / len(slg_queries)
+    all_slg = tupleToList(slg_queries)
     player_SLG = sql.quering_select("Select SLG from HitterProfiles where playerId="+str(playerId))
-    SLG_Point = player_SLG[0][0] / SLG_Total * 100
-    SLG_Point = round(SLG_Point)
+    player_slg = tupleToList(player_SLG)
+    SLG_Point = getpoint(all_slg,player_slg)
+
 
     #출루율
-    OBP_Total = 0.0
     obp_query = sql.quering_select("Select OBP from HitterProfiles")
-    for OBP in obp_query:
-        OBP_Total = OBP_Total + OBP[0]
-    OBP_Total = OBP_Total / len(obp_query)
+    all_obp = tupleToList(obp_query)
     player_OBP = sql.quering_select("Select OBP from HitterProfiles where playerId="+str(playerId))
-    OBP_Point = player_OBP[0][0] / OBP_Total * 100
-    OBP_Point = round(OBP_Point)
+    player_obp = tupleToList(player_OBP)
+    OBP_Point = getpoint(all_obp,player_obp)
 
     #주루율
+    sb_query = sql.quering_select("Select OBP from HitterProfiles")
+    all_sb= tupleToList(sb_query)
     player_SB = sql.quering_select("Select SB from HitterProfiles where playerId="+str(playerId))
-    SB_Point = round(player_SB[0][0])
+    player_sb = tupleToList(player_SB)
+    SB_Point = getpoint(all_sb,player_sb)
 
 
     #득점율
-    RISP_Total = 0.0
     risp_query = sql.quering_select("Select RISP from HitterProfiles")
-    for RISP in risp_query:
-        RISP_Total = RISP_Total + RISP[0]
-    RISP_Total = RISP_Total / len(risp_query)
-    player_RISP = sql.quering_select("Select RISP from HitterProfiles where playerId="+str(playerId))
-    RISP_Point = round(player_RISP[0][0] / RISP_Total * 100)
+    all_risp = tupleToList(risp_query)
+    risp_query = sql.quering_select("Select RISP from HitterProfiles where playerId="+str(playerId))
+    player_risp = tupleToList(risp_query)
+    RISP_Point = getpoint(all_risp,player_risp)
+
 
     #수비율
-    E_Total = 0.0
     array = []
     E_query = sql.quering_select("Select G,E from HitterProfiles")
     for (G,E) in E_query:
-        E_Total = E_Total + E * 1.0 /G* 1.0
     	array.append(E*1.0 / G*1.0)
-    
-    E_Total = E_Total / len(E_query)
-    print E_Total
     player_E = sql.quering_select("Select G,E from HitterProfiles where playerId="+str(playerId))
-    E_Point = round(player_E[0][0] / E_Total * 100)
+    player_e = player_E[0][1]*1.0 / player_E[0][0]*1.0
+    E_Point = getpoint(array,player_e)
+
 
     #long : 장타 , hit : 타율, run : 주루율, point : 득점율, defence : 수비율
     result = {"long":SLG_Point, "hit":OBP_Point, "run":SB_Point, "point":RISP_Point, "defence":E_Point}
