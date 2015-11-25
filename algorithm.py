@@ -56,3 +56,53 @@ def growth(playerId):
         OPS_y.append(y) #ops_y 리스트에 추가
 
     return OPS_y
+
+def stat(playerId):
+    sql = Query()
+
+    # 장타율
+    SLG_Total = 0.0
+    slg_queries = sql.quering_select("Select SLG from HitterProfiles")
+    for SLG in slg_queries:
+        SLG_Total= SLG_Total + SLG
+    SLG_Total = SLG_Total / slg_queries.size()
+    player_SLG = sql.quering_select("Select SLG from HitterProfiles where playerId="+str(playerId))
+    SLG_Point = player_SLG[0] / SLG_Total * 100
+    SLG_Point = round(SLG_Point)
+
+    #출루율
+    OBP_Total = 0.0
+    obp_query = sql.quering_select("Select OBP from HitterProfiles")
+    for OBP in obp_query:
+        OBP_Total = OBP_Total + OBP
+    OBP_Total = OBP_Total / obp_query.size()
+    plyaer_OBP = sql.quering_select("Select OBP from HitterProfiles where playerId="+str(playerId))
+    OBP_Point = player_OBP[0] / OBP_Total * 100
+    OBP_Point = round(OBP_Point)
+
+    #주루율
+    player_SB = sql.quering_select("Select SB from HitterProfiles where playerId="+str(playerId))
+    SB_Point = round(player_SB)
+
+
+    #득점율
+    RISP_Total = 0.0
+    risp_query = sql.quering_select("Select RISP from HitterProfiles")
+    for RISP in risp_query:
+        RISP_Total = RISP_Total + RISP
+    RISP_Total = RISP_Total / risp_query.size()
+    player_RISP = sql.quering_select("Select RISP from HitterProfiles where playerId="+str(playerId))
+    RISP_Point = round(player_RISP[0] / RISP_Total * 100)
+
+    #수비율
+    E_Total = 0.0
+    E_query = sql.quering_select("Select G,E from HitterProfiles")
+    for G,E in E_query:
+        E_Total = E_Total + E/G
+    E_Total = E_Total / E_query.size()
+    player_E = sql.quering_select("Select G,E from HitterProfiles where playerId="+str(playerId))
+    E_Point = round(player_E[0] / E_Total * 100)
+
+    #long : 장타 , hit : 타율, run : 주루율, point : 득점율, defence : 수비율
+    result = {"long":SLG_Point, "hit":OBP_Point, "run":SB_Point, "point":RISP_Point, "defence":E_Point}
+    return result
