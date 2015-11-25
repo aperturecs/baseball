@@ -63,7 +63,7 @@ def stat(playerId):
     # 장타율
     SLG_Total = 0.0
     slg_queries = sql.quering_select("Select SLG from HitterProfiles")
-
+    print slg_queries
     for SLG in slg_queries:
         SLG_Total= SLG_Total + SLG[0]
     SLG_Total = SLG_Total / slg_queries.size()
