@@ -66,7 +66,7 @@ def stat(playerId):
     print slg_queries
     for SLG in slg_queries:
         SLG_Total= SLG_Total + SLG[0]
-    SLG_Total = SLG_Total / slg_queries.size()
+    SLG_Total = SLG_Total / len(slg_queries).
     player_SLG = sql.quering_select("Select SLG from HitterProfiles where playerId="+str(playerId))
     SLG_Point = player_SLG[0] / SLG_Total * 100
     SLG_Point = round(SLG_Point)
@@ -76,7 +76,7 @@ def stat(playerId):
     obp_query = sql.quering_select("Select OBP from HitterProfiles")
     for OBP in obp_query:
         OBP_Total = OBP_Total + OBP[0]
-    OBP_Total = OBP_Total / obp_query.size()
+    OBP_Total = OBP_Total / len(obp_query)
     plyaer_OBP = sql.quering_select("Select OBP from HitterProfiles where playerId="+str(playerId))
     OBP_Point = player_OBP[0] / OBP_Total * 100
     OBP_Point = round(OBP_Point)
@@ -91,7 +91,7 @@ def stat(playerId):
     risp_query = sql.quering_select("Select RISP from HitterProfiles")
     for RISP in risp_query:
         RISP_Total = RISP_Total + RISP[0]
-    RISP_Total = RISP_Total / risp_query.size()
+    RISP_Total = RISP_Total / len(risp_query)
     player_RISP = sql.quering_select("Select RISP from HitterProfiles where playerId="+str(playerId))
     RISP_Point = round(player_RISP[0] / RISP_Total * 100)
 
@@ -100,7 +100,7 @@ def stat(playerId):
     E_query = sql.quering_select("Select G,E from HitterProfiles")
     for G,E in E_query:
         E_Total = E_Total + E/G
-    E_Total = E_Total / E_query.size()
+    E_Total = E_Total / len(E_query)
     player_E = sql.quering_select("Select G,E from HitterProfiles where playerId="+str(playerId))
     E_Point = round(player_E[0] / E_Total * 100)
 
