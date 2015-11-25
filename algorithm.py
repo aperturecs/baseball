@@ -27,9 +27,9 @@ def tupleToList(tup):
         if type(data) == "tuple":
             if len(data) == 1:
                 results.appned(data[0])
-            else
+            else:
                 result.appned(list(data))
-        else
+        else:
             results.append(data)
 
     if len(results) == 1:
@@ -101,6 +101,7 @@ def stat(playerId):
     all_slg = tupleToList(slg_queries)
     player_SLG = sql.quering_select("Select SLG from HitterProfiles where playerId="+str(playerId))
     player_slg = tupleToList(player_SLG)
+    print str(all_slg) + str(player_slg)
     SLG_Point = getpoint(all_slg,player_slg)
 
 
