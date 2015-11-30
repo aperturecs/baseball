@@ -25,4 +25,4 @@ class ApiManager:
 
     def getOPS(self,playerId):
 
-        que 
+        que

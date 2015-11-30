@@ -25,6 +25,7 @@ def hitterGameParsing(player):
         "ctl00$ctl00$cphContainer$cphContents$ddlYear":"2010"
     }
 
+    # hello world
     for year in range(2010,2016):
         try:
             params["ctl00$ctl00$cphContainer$cphContents$ddlYear"] = str(year)

@@ -8,7 +8,6 @@ class Query:
             self.cur.execute("SET NAMES utf8")
             self.cur.execute("SELECT VERSION()")
             ver = self.cur.fetchone()
-            print "Database version : %s " % ver
         except mdb.Error, e:
             print "Error %d: %s" % (e.args[0],e.args[1])
             sys.exit(1)

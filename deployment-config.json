@@ -1,0 +1,9 @@
+{
+    "type": "sftp",
+    "host": "aperturecs.com",
+    "username": "codertimo",
+    "password": "araruya17",
+    "port": 2222,
+    "remotePath": "/home/codertimo/baseball",
+    "uploadOnSave": true
+}

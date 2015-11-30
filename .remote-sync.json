@@ -1,0 +1,14 @@
+{
+  "uploadOnSave": false,
+  "deleteLocal": false,
+  "hostname": "aperturecs.com",
+  "port": "2222",
+  "target": "/home/codertimo/baseball",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "codertimo",
+  "password": "araruya17",
+  "transport": "sftp"
+}

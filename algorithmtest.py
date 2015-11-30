@@ -1,7 +1,8 @@
 #-*- coding: utf-8 -*-
 import algorithm
 
-datas = algorithm.growth(64914)
+print algorithm.getPlayerId("테임즈")
+print algorithm.profile(64914)
+print algorithm.growth(64914)
 print algorithm.stat(64914)
-for data in datas:
-    print str(data["year"])+"."+str(data["month"])+" : " + str(data["growth"])
+print algorithm.simmilar(64914)

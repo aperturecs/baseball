@@ -16,82 +16,66 @@ def getpoint(list, point):
 
     return round((point - min) * size)
 
+def getPointArray(list):
+    max = 0.0
+    min = 100.0
+    for data in list:
+        if max < data:
+            max = data
+        if min > data:
+            min = data
+
+    lenth = max - min
+    size = 100 / lenth
+
+    result = []
+    for data in list:
+        result.append(round((data - min) * size))
+    return result
+
 def tupleToList(tup):
     datas = []
     results = []
+
     if type(tup) == "tuple":
         datas = list(tup)
     else:
         datas = tup
+
     for data in datas:
-        if type(data) == "tuple":
-            if len(data) == 1:
-                results.appned(data[0])
-            else:
-                result.appned(list(data))
+        if len(list(data)) == 1:
+            results.append(list(data)[0])
         else:
-            results.append(data)
+            results.append(list(data))
 
     if len(results) == 1:
         return results[0]
 
     return results
 
+def profile(playerId):
+    sql = Query()
+    name= tupleToList(sql.quering_select("select name from players where playerId="+str(playerId)))
+    image = tupleToList(sql.quering_select("select image from players where playerId="+str(playerId)))
+    position = tupleToList(sql.quering_select("select position from players where playerId="+str(playerId)))
+    position_detail = tupleToList(sql.quering_select("select position_detail from players where playerId="+str(playerId)))
+    team = tupleToList(sql.quering_select("select team from players where playerId="+str(playerId)))
+
+    return {"name":name,"playerId":playerId,"image":image,"postion":position,"position_detail":position_detail,"team":team}
+
+def getPlayerId(name):
+    sql = Query()
+    playerId= tupleToList(sql.quering_select("select playerId from players where name='"+str(name)+"'"))
+    return {"playerId":playerId}
 
 def growth(playerId):
-
     sql = Query()
-    queries = sql.quering_select("Select * from HitterGames where playerId="+str(playerId))
+    queries = sql.quering_select("select Round(AVG(AVG1),3) from HitterGames where playerId="+str(playerId)+" Group by year,month")
+    points = getPointArray(tupleToList(queries))
+    queries = tupleToList(sql.quering_select("select year,month from HitterGames where playerId="+str(playerId)+" Group by year,month"))
 
-    games = []
+    return {"date":queries, "points":points}
 
-    def find(year, month):
-        temps = []
-        for game in games:
-            if game.year == year and game.month==month:
-                temps.append(game)
-        return temps
-
-    for query in queries:
-        game = HitterGame(query[1],query[2],query[3],query[4],query[5],query[6],query[7],query[8],query[9],query[10],query[11],query[12],query[13],query[14],query[15],query[16],query[17],query[18],query[19],query[20])
-        games.append(game)
-
-    Games = []
-
-    for year in range(2010,2016):
-        for month in range(3,11):
-            tempGame = {"year":year,"month":month,"OPS":0.0,"H":0,"BB":0,"HBP":0,"AB":0,"HBP":0,"TB":0}
-            tempGames = find(year, month)
-            for game in tempGames:
-                tempGame["H"] += game.H
-                tempGame["BB"]+= game.BB
-                tempGame["HBP"]+= game.HBP
-                tempGame["AB"]+=game.AB
-                tempGame["TB"]+= game.H + game.B2*2 + game.B3*3 + game.HR*4
-            Games.append(tempGame) # [{"year":year,"month":month,"OPS":0.0,"H":0,"BB":0,"HBP":0,"AB":0,"HBP":0,"TB":0}]
-    OPS_A = [] #매월 경기 OPS
-
-    for game in Games:
-        try:
-            OBP = (game["H"] + game["BB"] + game["HBP"])*1.0 / (game["AB"] + game["BB"] + game["HBP"])*1.0
-            OBP = round(OBP,4)
-            SLG = game["TB"] / game["AB"]
-            OPS = OBP + SLG
-            if OPS > 0.0:
-                OPS_A.append({"year":game["year"], "month":game["month"], "OPS":OPS}) #계산한 OPS 매월별 집어넣기
-        except:
-            pass
-
-
-    OPS_y =[] #OPS 성장률 y값
-    OPS_f = OPS_A[0].get("OPS")
-
-    for OPS in OPS_A:
-        OPS_growth = OPS["OPS"] - OPS_f #한 경기 OPS - 맨 처음경기 OPS
-        y = {"year":OPS["year"],"month":OPS["month"], "growth": OPS_growth}
-        OPS_y.append(y) #ops_y 리스트에 추가
-
-    return OPS_y
 
 def stat(playerId):
     sql = Query()
@@ -101,7 +85,6 @@ def stat(playerId):
     all_slg = tupleToList(slg_queries)
     player_SLG = sql.quering_select("Select SLG from HitterProfiles where playerId="+str(playerId))
     player_slg = tupleToList(player_SLG)
-    print str(all_slg) + str(player_slg)
     SLG_Point = getpoint(all_slg,player_slg)
 
 
@@ -113,7 +96,7 @@ def stat(playerId):
     OBP_Point = getpoint(all_obp,player_obp)
 
     #주루율
-    sb_query = sql.quering_select("Select OBP from HitterProfiles")
+    sb_query = sql.quering_select("Select SB from HitterProfiles")
     all_sb= tupleToList(sb_query)
     player_SB = sql.quering_select("Select SB from HitterProfiles where playerId="+str(playerId))
     player_sb = tupleToList(player_SB)
@@ -140,4 +123,14 @@ def stat(playerId):
 
     #long : 장타 , hit : 타율, run : 주루율, point : 득점율, defence : 수비율
     result = {"long":SLG_Point, "hit":OBP_Point, "run":SB_Point, "point":RISP_Point, "defence":E_Point}
+    return result
+
+def simmilar(playerId):
+    sql = Query()
+    p = tupleToList(sql.quering_select("Select AVG from HitterProfiles where playerId="+str(playerId)))
+    players_avg = tupleToList(sql.quering_select("Select playerId from HitterProfiles where (AVG-"+str(p)+")>=0 and playerId!="+str(playerId)+" ORDER BY (AVG-"+str(p)+")"))
+    result = []
+    result.append(players_avg[0])
+    result.append(players_avg[1])
+    result.append(players_avg[2])
     return result
