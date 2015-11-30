@@ -24,14 +24,16 @@
 
 ###```GET  /stat/<선수ID>```
 선수의 능력치를 보여줍니다.
+주루력, 수비력, 타격력, 장타력, 득점력
+
 ```json
 {
-  "power":255,
-  "scoring":255,
-  "running":255,
-  "error":255,
-  "contribute":255
-}
+  "run": 40.0,
+  "defence" : 16.0,
+  "hit": 89.0,
+  "long": 59.0,
+  "point": 62.0
+}  
 ```
 
 ###```GET  /growth/<선수ID>```
